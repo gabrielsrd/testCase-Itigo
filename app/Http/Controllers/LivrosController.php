@@ -28,7 +28,8 @@ class LivrosController extends Controller
      */
     public function store(Request $request)
     {
-        return Livro::create($request->all());
+        Livro::create($request->all());
+        return redirect()->route('livros.index')->with('success', 'Livro criado com sucesso!');
     }
 
     /**
@@ -52,7 +53,8 @@ class LivrosController extends Controller
      */
     public function update(Request $request, Livro $livro)
     {
-        return $livro->update($request->all());
+        $livro->update($request->all());
+        return redirect()->route('livros.index')->with('success', 'Livro atualizado com sucesso!');
     }
 
     /**
