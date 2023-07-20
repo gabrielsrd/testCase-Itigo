@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('autores', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('sexo');
+            $table->string('sexo')->nullable();
             $table->string('email');
             $table->string('telefone');
-            $table->string('pais');
-            $table->integer('ano_nascimento');
+            $table->string('pais')->nullable();
+            $table->integer('ano_nascimento')->nullable();
             $table->timestamps();
         });
     }
