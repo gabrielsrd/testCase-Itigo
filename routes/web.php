@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\LivrosController;
+use App\Http\Controllers\EditorasController;
+use App\Http\Controllers\AutoresController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +18,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
+/*
+index: GET /livros
+show: GET /livros/{livro}
+store: POST /livros
+create: GET /livros/create 
+update: PUT /livros/{livro}
+destroy: DELETE /livros/{livro}
+edit: GET /livros/{livro}/edit
+*/
 Route::resource('livros', LivrosController::class);
+Route::resource('editoras', EditorasController::class);
+Route::resource('autores', AutoresController::class)->parameter('autores', 'autor');
