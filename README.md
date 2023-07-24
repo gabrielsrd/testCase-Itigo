@@ -1,4 +1,4 @@
-# Project README
+# Itigo CRUD test-case
 
 This is a CRUD test case for Itigo, implementing functionality for managing books, authors, and publishers. The project is developed using Laravel and utilizes a PostgreSQL database. To run the project, Docker and Docker Compose are required.
 
